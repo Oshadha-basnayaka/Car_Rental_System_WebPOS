@@ -3,106 +3,13 @@ body{
     overflow-x: hidden;
 }
 
-
-
-
-
-/*popupWindow*/
-
-/*input {*/
-/*    width: 210px;*/
-/*    height: 50px;*/
-/*    padding: 0 16px;*/
-/*    background: transparent;*/
-/*    border-radius: 4px;*/
-/*    border: 1px solid #fe4567;*/
-/*    color: #f9f9f9;*/
-/*    animation: shake_541 0.14s 3;*/
-/*}*/
-
-/*input:valid {*/
-/*    border-color: #45feaf;*/
-/*    animation: none;*/
-/*}*/
-
-/*@keyframes shake_541 {*/
-/*    0%, 100% {*/
-/*        translate: 0;*/
-/*    }*/
-
-/*    25% {*/
-/*        translate: 8px 0;*/
-/*    }*/
-
-/*    75% {*/
-/*        translate: -8px 0;*/
-/*    }*/
-/*}*/
-
-/*@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Kanit:wght@400&display=swap');*/
+/*popupwindow*/
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
-    /*font-family: 'Inter', sans-serif;*/
-    /*font-family: 'Kanit', sans-serif;*/
-    font-family: 'Poppins', sans-serif;
-}
-
-.navbar-expand-lg .navbar-collapse{
-    justify-content: flex-end;
-}
 
 
 
-.home1{
-    height: 95vh;
-    width: 100vw;
-    background-color: black;
-    /*margin-top: -5px;*/
-    background-image: url("/assets/img/bg_sec1_final.png");
-    background-size: cover;
-    background-position: center;
-    -moz-background-size: cover;
-}
-
-/*.imgB{*/
-/*    width: 100%;*/
-/*    height: 250px;*/
-/*    background-image: url("/assets/img/sec1Bg.png");*/
-/*    background-position: center;*/
-/*    background-size: cover;*/
-/*}*/
-
-#textSec1Div{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.txt-big{
-    font-size: 60px;
-}
-
-#homePTxt{
-    font-size: 18px;
-    width: 40%;
-}
-
-#mainSecPrice{
-    font-size: 50px;
-    /*font-weight: 800;*/
-}
-
-#btnGetStart{
-    width: 150px;
-    font-size: 18px;
-}
-
-.menu-size{
-    font-size: 18px;
-}
 
 #loginBG{
     width: 100vw;
@@ -124,7 +31,7 @@ body{
 #loginImgDiv{
     height: 100%;
     width: 60%;
-    background-image: url("/assets/img/loginBgDiv2.png");
+    background-image: url("assests/image/bg_3.jpg");
     background-size: cover;
     background-position: center;
     align-items: flex-start;
@@ -241,9 +148,9 @@ body{
     height: 0.3%;
 }
 
-#closeLogin{
-    /*cursor: pointer;*/
-}
+/*#closeLogin{*/
+/*    !*cursor: pointer;*!*/
+/*}*/
 
 
 
@@ -253,7 +160,7 @@ body{
 
 
 
-
+/*home*/
 
 
 
