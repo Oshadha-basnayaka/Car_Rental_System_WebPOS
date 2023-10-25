@@ -1,0 +1,300 @@
+/*home*/
+body{
+    overflow-x: hidden;
+}
+#home {
+    width: 100vw;
+    height: 100vh;
+    background: #DDEBEF;
+}
+
+#homeText{
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+#homePhoto{
+    width: 50%;
+    height: 100%;
+
+}
+
+#homePhoto div {
+    width: 1147px;
+    height: 731px;
+    background-image:url("/image/Frame 1.png") ;
+    background-position: left;
+    background-size: cover;
+}
+
+#homeText h1 {
+    font-size: 70px;
+    letter-spacing: 10px;
+    align-items:flex-start;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*abouth*/
+
+
+#abouth{
+    height: 80vh;
+    width: 100vw;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+}
+
+#abouthphoto{
+    width: 50%;
+    height: 100%;
+
+}
+
+#photoAbout{
+    position: absolute;
+    bottom: -699px;
+    left: 273px;
+    width: 571px;
+    height: 625px;
+    background-image:url("/image/bg5.png") ;
+    background-position: center;
+    background-size: cover;
+}
+
+#abouthtext{
+    width: 50%;
+    height: 50%;
+}
+
+#abouthtext{
+
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#abouthtext p{
+    position: absolute;
+    top: 1217px;
+    font-size: 15px;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*cars*/
+
+
+#cars{
+    width: 100vw;
+    height: 100vh;
+    background: #DDEBEF;
+}
+
+
+
+/*(palweni card ek me)*/
+
+.card {
+    width: 190px;
+    background: white;
+    padding: .4em;
+    border-radius: 6px;
+}
+
+.card-image1 {
+    /*background-color: rgb(236, 236, 236);*/
+    background-image: url("/image/bg4.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 130px;
+    border-radius: 6px 6px 0 0;
+
+}
+
+.card-image2 {
+    /*background-color: rgb(236, 236, 236);*/
+    background-image: url("/image/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 130px;
+    border-radius: 6px 6px 0 0;
+
+}
+
+.card-image3 {
+    /*background-color: rgb(236, 236, 236);*/
+    background-image: url("/image/bg_3.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 130px;
+    border-radius: 6px 6px 0 0;
+
+}
+
+.card-image:hover {
+    transform: scale(0.98);
+}
+
+.category {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: rgb(63, 121, 230);
+    padding: 10px 7px 0;
+}
+
+.category:hover {
+    cursor: pointer;
+}
+
+.heading {
+    font-weight: 600;
+    color: rgb(88, 87, 87);
+    padding: 7px;
+}
+
+.heading:hover {
+    cursor: pointer;
+}
+
+.author {
+    color: gray;
+    font-weight: 400;
+    font-size: 11px;
+    padding-top: 20px;
+}
+
+.name {
+    font-weight: 600;
+}
+
+.name:hover {
+    cursor: pointer;
+}
+
+
+
+/*dewani card ek meka*/
+
+.card {
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    max-width: 320px;
+    border-radius: 20px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title span {
+    position: relative;
+    padding: 0.5rem;
+    background-color: #10B981;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 9999px;
+}
+
+.title span svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    height: 1rem;
+}
+
+.title-text {
+    margin-left: 0.5rem;
+    color: #374151;
+    font-size: 18px;
+}
+
+.percent {
+    margin-left: 0.5rem;
+    color: #02972f;
+    font-weight: 600;
+    display: flex;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.data p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #1F2937;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.data .range {
+    position: relative;
+    background-color: #E5E7EB;
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.data .range .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #10B981;
+    width: 76%;
+    height: 100%;
+    border-radius: 0.25rem;
+}
+
+
+
+
+
+
+
+/*contact us*/
+
+
+
+#contact{
+    width: 100vw;
+    height: 95vh;
+
+}
