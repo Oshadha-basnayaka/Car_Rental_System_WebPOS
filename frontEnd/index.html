@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy Car Rent</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assests/css/styles.css">
+    <link rel="stylesheet" href="assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
     <!-- Link to your external CSS file -->
 </head>
 <body>
@@ -23,19 +25,63 @@
         <div class="collapse navbar-collapse" style="left: 15vw;position: relative" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">cars</a></li>
-                <li class="nav-item"><a href="pricing.html" class="nav-link">Rent</a></li>
+                <li class="nav-item"><a href="pages/about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="pages/cars.html" class="nav-link">cars</a></li>
+                <li class="nav-item"><a href="pages/rent.html" class="nav-link">Rent</a></li>
             </ul>
         </div>
 
         <div class="mx-5" style="left: 20vw;position: relative">
-            <button type="button" class="btn btn-outline-primary mx-1">login</button>
+            <button type="button" class="btn btn-outline-primary mx-1" id="viewLogin">login</button>
             <button type="button" class="btn btn-outline-danger">signUp</button>
         </div>
 
     </div>
 </nav>
+
+<!--<section id="popuplogin" style="width: 100%; height: 100vh; position: fixed; top: 0; margin: auto; backdrop-filter: blur(10px); z-index: 2">-->
+
+<!--    <section style="height: 100vh; width: 100vh; z-index: 3; position: ">-->
+<!--        <form>-->
+<!--            <input required="" type="text" placeholder="User name">-->
+<!--            <input required="" type="text" placeholder="password">-->
+<!--        </form>-->
+
+<!--    </section>-->
+
+<section class="container-fluid bg-transparent position-fixed fixed-top z-2" id="loginBG">
+    <div class="bg-white d-flex z-3 rounded" id="loginMainDiv">
+
+        <div class="container" id="loginImgDiv"></div>
+        <div id="loginTextDiv">
+            <h2 class="mb-5">Welcome Back</h2>
+
+            <input class="input mb-3" placeholder="User Name" type="text">
+            <input class="input mb-1" placeholder="Password" type="password">
+            <div id="forgotDiv" class="mb-4">
+                <a class="text-primary mt-1" href="#">forgot password</a>
+            </div>
+
+
+            <button class="button btn btn-primary" id="btnSign">
+                Sign In
+                <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                    <path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fill-rule="evenodd"></path>
+                </svg>
+            </button>
+
+            <p class="mt-4 mb-0">Don't Have An Account</p>
+            <a class="mt-0" href="pages/customerRegistration.html">Register Now !</a>
+
+            <div class="container bg-primary mt-5 mb-3" id="lineBreak"></div>
+            <p id="closeLogin" class="text-danger"><i class="fa-solid fa-circle-xmark me-2"></i>Close</p>
+        </div>
+
+    </div>
+</section>
+
+
+</section>
 
 <section id="home" class="container-fluid d-flex">
 
@@ -109,7 +155,7 @@
             <div class="category"> Luxury Cars</div>
             <div class="heading"> Indulge in Opulence: Explore Our Fleet of Exquisite Luxury Cars. Elevate Your Travel Experience with
                 Unparalleled Comfort and Style.
-                <div class="author"> By <span class="name">Abi</span> 4 days ago</div>
+<!--                <div class="author"> By <span class="name">Abi</span> 4 days ago</div>-->
             </div>
         </div>
 
@@ -118,7 +164,7 @@
             <div class="card-image2"></div>
             <div class="category"> Premium Cars</div>
             <div class="heading"> Elevate your travel experience with our exclusive fleet of premium cars. From luxurious sedans to high-performance SUVs, explore the epitome of comfort and style for an unforgettable journey.
-                <div class="author"> By <span class="name">Abi</span> 4 days ago</div>
+<!--                <div class="author"> By <span class="name">Abi</span> 4 days ago</div>-->
             </div>
         </div>
 
@@ -127,7 +173,7 @@
             <div class="card-image3"></div>
             <div class="category"> General Cars</div>
             <div class="heading"> Explore our diverse fleet of reliable and comfortable general cars, perfect for every journey. From compact efficiency to spacious convenience, find the ideal ride for your travel needs.
-                <div class="author"> By <span class="name">Abi</span> 4 days ago</div>
+<!--                <div class="author"> By <span class="name">Abi</span> 4 days ago</div>-->
             </div>
         </div>
 
@@ -264,19 +310,243 @@
 
 </section>
 
-<section id="contact">
+<section class="testimonials section-bg" id="testimonials" style="height: 50vh">
+    <div class="container" data-aos="fade-up">
 
-    <div class="container d-inline-block">
+        <div class="section-header">
+            <h2 class="text-center mt-5">Testimonials</h2>
+            <p class="text-center mb-5">What Are They <span>Saying About Us</span></p>
+        </div>
+
+        <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide ">
+                    <div class="testimonial-item">
+                        <div class="row gy-4 justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="testimonial-content mt-5" >
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i> Proin iaculis purus consequat
+                                        sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                                        quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
+                                        risus at semper.
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                    <h3>Saul Goodman</h3>
+                                    <h4>Ceo &amp; Founder</h4>
+                                    <div class="stars">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-center">
+                                <img alt=""
+                                     class="img-fluid testimonial-img"
+                                     src="assests/image/testimonials/testimonials-1.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="row gy-4 justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="testimonial-content mt-5">
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i> Export tempor illum tamen malis
+                                        malis eram quae irure esse labore quem cillum quid cillum eram malis quorum
+                                        velit fore eram velit sunt aliqua noster fugiat irure
+                                        amet legam anim culpa.
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                    <h3>Sara Wilsson</h3>
+                                    <h4>Designer</h4>
+                                    <div class="stars">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-center">
+                                <img alt=""
+                                     class="img-fluid testimonial-img"
+                                     src="assests/image/testimonials/testimonials-2.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="row gy-4 justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="testimonial-content mt-5">
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i> Enim nisi quem export duis
+                                        labore cillum quae magna enim sint quorum nulla quem veniam duis minim
+                                        tempor labore quem eram duis noster aute amet eram fore quis
+                                        sint minim.
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                    <h3>Jena Karlis</h3>
+                                    <h4>Store Owner</h4>
+                                    <div class="stars">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-center">
+                                <img alt=""
+                                     class="img-fluid testimonial-img"
+                                     src="assests/image/testimonials/testimonials-3.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="row gy-4 justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="testimonial-content mt-5">
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i> Quis quorum aliqua sint quem
+                                        legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
+                                        labore duis sunt culpa nulla illum cillum fugiat legam esse
+                                        veniam culpa fore nisi cillum quid.
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                    <h3>John Larson</h3>
+                                    <h4>Entrepreneur</h4>
+                                    <div class="stars">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 text-center">
+                                <img alt=""
+                                     class="img-fluid testimonial-img"
+                                     src="assests/image/testimonials/testimonials-4.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End testimonial item -->
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" style="  background: #DDEBEF;">
+
+    <div class="container">
 
 
 
         <div class=" mt-5" style="width: 1067px; height: 100px">
-            <p style="position:relative; left: 730px; font-weight: inherit;">"Thank you for exploring our website! We appreciate your time.<br>
+            <p style="position:relative; left: 350px; font-weight: inherit;">"Thank you for exploring our website! We appreciate your time.<br>
                 For any inquiries or assistance, feel free to contact us. Safe travels!"</p>
 
         </div>
 
-        <div class=" mt-5" style="width: 100px; height: 100px"></div>
+        <div class=" mt-5" style="width: 100px; height: 100px">
+
+
+            <div class="notifications-container mt-5">
+                <div class="dad-joke">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="dad-joke-svg">
+                                <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="dad-joke-prompt-wrap">
+                            <p class="dad-joke-prompt-heading">Dad Jokes Alert!</p>
+                            <div class="dad-joke-prompt">
+                                <p>
+                                    Why don’t scientists trust atoms? Because they make up everything.
+                                </p>
+                            </div>
+                            <div class="dad-joke-button-container">
+                                <button class="dad-joke-button-main" type="button">
+                                    Make It Stop
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notifications-container mt-5">
+                <div class="dad-joke">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="dad-joke-svg">
+                                <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="dad-joke-prompt-wrap">
+                            <p class="dad-joke-prompt-heading">Dad Jokes Alert!</p>
+                            <div class="dad-joke-prompt">
+                                <p>
+                                    Why don’t scientists trust atoms? Because they make up everything.
+                                </p>
+                            </div>
+                            <div class="dad-joke-button-container">
+                                <button class="dad-joke-button-main" type="button">
+                                    Make It Stop
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notifications-container mt-5">
+                <div class="dad-joke">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="dad-joke-svg">
+                                <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="dad-joke-prompt-wrap">
+                            <p class="dad-joke-prompt-heading">Dad Jokes Alert!</p>
+                            <div class="dad-joke-prompt">
+                                <p>
+                                    Why don’t scientists trust atoms? Because they make up everything.
+                                </p>
+                            </div>
+                            <div class="dad-joke-button-container">
+                                <button class="dad-joke-button-main" type="button">
+                                    Make It Stop
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
         <div class=" mt-5" style="width: 100px; height: 100px"></div>
 
 
@@ -290,6 +560,49 @@
 </body>
 </html>
 
-<script src="js/bootstrap.min.js"></script>
+<!-- Include Swiper CSS and JS files -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="assests/js/jquery-3.7.0.min.js"></script>
+
+<script>
+    $('#loginBG').hide();
+    $('#viewLogin').click(function () {
+        $('#loginBG').show();
+    })
+</script>
+
+<!-- Your HTML code remains the same -->
+
+<!-- Add this script at the end of your HTML body or in your script file -->
+<!-- Include Swiper CSS and JS files -->
+
+<!-- Your HTML code remains the same -->
+
+<!-- Add this script at the end of your HTML body or in your script file -->
+<script>
+    // Wait for the DOM to be ready
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Swiper
+        var swiper = new Swiper('.slides-1', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000, // Set the autoplay interval to 3 seconds
+                disableOnInteraction: false, // Continue autoplay even when user interacts with the slider
+            },
+        });
+    });
+</script>
+
+
+
+<script src="assests/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
