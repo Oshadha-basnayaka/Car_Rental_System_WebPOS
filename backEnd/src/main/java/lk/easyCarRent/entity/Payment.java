@@ -8,16 +8,17 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @ToString
-public class User {
 
+
+public class Payment {
     @Id
-    private String userName;
-    private String password;
-    private String role;
+    private String paymentID;
+    private Double waiverDeductions;
+    private String waiverSlip;
+    private Double extraMileagePayment;
 }

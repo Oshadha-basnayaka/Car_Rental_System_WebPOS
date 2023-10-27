@@ -11,25 +11,22 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 
-
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @ToString
-
-public class Customer {
+public class Driver {
 
     @Id
-    private String customerID;
-    private String name;
-    private String address;
+    private String driverID;
+    private String drivingLicenceNo;
+    private String driverName;
     private String email;
-    private String contactNO;
-    private String licenceNO;
+    private String contactNo;
     private String frontImage;
     private String backImage;
 
-@OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private User user;
 }
