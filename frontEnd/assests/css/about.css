@@ -1,0 +1,49 @@
+
+#abouth{
+    height: 80vh;
+    width: 100vw;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+}
+
+#abouthphoto{
+    width: 50%;
+    height: 100%;
+
+}
+
+#photoAbout{
+    position: absolute;
+    bottom: 68px;
+    left: 273px;
+    width: 571px;
+    height: 625px;
+    background-image:url("/assests/image/bg5.png") ;
+    background-position: center;
+    background-size: cover;
+}
+
+#abouthtext{
+    width: 50%;
+    height: 50%;
+}
+
+#abouthtext{
+
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#abouthtext p{
+    position: absolute;
+    top: 310px;
+    font-size: 15px;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+

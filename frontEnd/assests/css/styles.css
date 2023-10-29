@@ -451,6 +451,60 @@ body{
 
 
 
+
+
+
+
+.companyDetailsContainer {
+    margin-top: 150px;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.25));
+}
+
+.companyDetailsContainerTopic {
+    color: #2D283D;
+    font-family: Smooch Sans;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4.8px;
+}
+
+.companyDetailsBox {
+    background: #D1D7E0;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15);
+}
+
+.companyDetailsBoxDescriptionPurple {
+    color: #7A2CA7;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.72px;
+}
+
+.companyDetailsBoxDescriptionBlack {
+    color: #2D283D;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.72px;
+}
+
+
+
+
+
+
+
+
+
+
+
 /*Testimation sayinsg*/
 
 
@@ -563,73 +617,51 @@ body{
 
 
 
-.notifications-container {
-    width: 320px;
-    height: auto;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+
+
+
+.footer {
+    margin-top: -100px;
 }
 
-.flex {
-    display: flex;
-    flex-direction: row;
+.footerCompanyName {
+    color: #D1D7E0;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-.flex-shrink-0 {
-    flex-shrink: 0;
+.footerDetailsList img,
+.footerDetailsList h4 {
+    display: inline-block;
+    margin-right: 5px;
 }
 
-.dad-joke {
-    padding: 1rem;
-    border-radius: 0.375rem;
-    background-color: rgb(248, 231, 28);
+.footerDetailsList li {
+    list-style-type: none;
 }
 
-.dad-joke-svg {
-    color: rgb(255, 255, 255);
-    width: 1.25rem;
-    height: 1.25rem;
+.footerDetailsList img {
+    width: 5%;
+    text-align: center;
 }
 
-.dad-joke-prompt-wrap {
-    margin-left: 0.75rem;
+.footerDetailsList h4 {
+    color: #D1D7E0;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1.2px;
 }
 
-.dad-joke-prompt-heading {
-    font-weight: bold;
-    color: rgb(57, 55, 54);
-}
-
-.dad-joke-prompt {
-    margin-top: 0.5rem;
-    color: rgb(57, 55, 54);
-}
-
-.dad-joke-button-container {
-    display: flex;
-    margin-top: 0.875rem;
-    margin-bottom: -0.375rem;
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
-}
-
-.dad-joke-button-main {
-    padding-top: 0.375rem;
-    padding-bottom: 0.375rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    background-color: #F75404;
-    color: #FFFFFF;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: bold;
-    border-radius: 0.375rem;
-    border: none
-}
-
-.dad-joke-button-main:hover {
-    background-color: #D1410C;
+.footerDetailsSocialMediaList li {
+    list-style-type: none;
+    font-size: 30px;
+    display: inline-block;
+    margin-right: 15px;
 }
