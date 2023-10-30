@@ -20,19 +20,19 @@ public class RentCarDetails implements Serializable {
     @JoinColumn(name = "rentID",referencedColumnName = "rentID",nullable = false)
     private Rental rentID;
 
-
+    @Id
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "carId",referencedColumnName = "carID",nullable = false)
+    @JoinColumn(name = "carID",referencedColumnName = "carID",nullable = false)
     private Car carID;
 
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "driverID",referencedColumnName = "driverID",nullable = false)
+    @JoinColumn(name = "driverID",referencedColumnName = "driverID",nullable = true)
     private Driver driverID;
 
 
     @OneToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "rentID",referencedColumnName = "rentID",nullable = false)
+    @JoinColumn(name = "paymentID",referencedColumnName = "paymentID",nullable = false)
     private Payment paymentID;
 
 }

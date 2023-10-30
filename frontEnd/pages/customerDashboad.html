@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Dashboad</title>
+  <meta content="width=device-width initial-scale=1" name="viewport">
+  <link rel="stylesheet" href="../assests/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assests/css/customerDashboad.css">
+  <!--    <link rel="stylesheet" href="assests/css/styleshees.css">-->
+
+  <!--    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">-->
+
+
+</head>
+<body>
+<main>
+  <section id="sideBarSec">
+    <img src="../assets/logo/logoCarRentalwc2.png" id="logo" class="ms-4 mt-3">
+
+    <div class="d-flex align-items-start container mt-5">
+      <div class="nav flex-column nav-pills me-3 ms-3" aria-orientation="vertical">
+        <button class="nav-link active text-light text-start mt-3" id="dashboard-tab" data-bs-toggle="pill" ><i class="fa-solid fa-house me-4"></i>Dashboard</button>
+        <button class="nav-link text-dark text-start mt-3" id="customers-tab" data-bs-toggle="pill"><i class="fa-solid fa-users me-4"></i>Customers</button>
+        <button class="nav-link text-dark text-start mt-3" id="cars-tab" data-bs-toggle="pill"><i class="fa-solid fa-car me-4"></i>Cars</button>
+        <button class="nav-link text-dark text-start mt-3" id="drivers-tab" data-bs-toggle="pill"><i class="fa-solid fa-drivers-license me-4"></i>Drivers</button>
+        <button class="nav-link text-dark text-start mt-3" id="rentals-tab" data-bs-toggle="pill"><i class="fa-solid fa-calendar-alt me-4"></i>Rentals</button>
+        <button class="nav-link text-dark text-start mt-3" id="Payments-tab" data-bs-toggle="pill"><i class="fa-solid fa-cash-register me-4"></i>Payments</button>
+        <button class="nav-link text-dark text-start mt-3" id="reports-tab" data-bs-toggle="pill"><i class="fa-solid fa-file-alt me-4"></i>Reports</button>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <section id="oSideBarSec" class="bg-white">
+    <section id="topBar" class="bg-dark text-end">
+      <div id="btnSignOut">
+        <i class="fa-solid fa-sign-out-alt text-light me-5 mt-3 topNavText" style="position: absolute;left: 308px;" >
+
+        </i></div>
+    </section>
+    <section id="containSec">
+
+
+      <section id="dashboardSec" class="container-fluid contentSections bg-white z-0">
+        <table class="table mt-3">
+          <thead class="table-header bg-primary text-white">
+          <td>Customer ID</td>
+          <td>Name</td>
+          <td>Address</td>
+          <td>Contact</td>
+          <td>Email</td>
+          </thead>
+        </table>
+      </section>
+      <section id="customersSec" class="container-fluid contentSections bg-white z-2">
+        <table class="table mt-3">
+          <thead class="table-header bg-primary text-white">
+          <td>Customer ID</td>
+          <td>Name</td>
+          <td>Address</td>
+          <td>Contact</td>
+          <td>Email</td>
+          </thead>
+        </table>
+      </section>
+      <section id="carsSec" class="container-fluid contentSections">
+        <div id="carDataInsertDiv" class="rounded-2 me-3 mt-3">
+          <h5 class="text-primary text-center mt-2">Car Registration Form</h5>
+          <form>
+            <div class="d-flex container mt-4">
+              <input type="text" name="" id="txtCarId" placeholder="Car ID" class="input me-3 ms-3">
+              <input type="text" name="" id="txtCarRegNum" placeholder="Registration Number" class="input me-3 ms-3">
+            </div>
+
+            <div class="d-flex container mt-4">
+              <input type="text" name="" id="txtCarBrand" placeholder="Brand" class="input me-3 ms-3">
+              <select type="" name="" id="txtCarType" class="input me-3 ms-3">
+                <option value="null" selected>Type Of The Car</option>
+                <option value="general">General</option>
+                <option value="premium">Premium</option>
+                <option value="luxury">Luxury</option>
+              </select>
+            </div>
+
+            <div class="d-flex container mt-4">
+              <input type="text" name="" id="txtCarNumPassengers" placeholder="Number Of Passengers" class="input me-3 ms-3">
+              <input type="text" name="" id="txtCarColour" placeholder="Color" class="input me-3 ms-3">
+            </div>
+
+            <div class="d-flex container mt-4">
+              <select type="" name="" id="txtCarTransmission" class="input me-3 ms-3">
+                <option value="null" selected>Transmission Type</option>
+                <option value="manual">Manual</option>
+                <option value="auto">Automatic</option>
+              </select>
+              <select type="" name="" id="txtCarFuel" class="input me-3 ms-3">
+                <option value="null" selected>Fuel Type</option>
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+              </select>
+            </div>
+
+            <div class="d-flex container mt-3">
+              <input type="number" name="" id="txtExtraKMPrice" placeholder="Extra Mileage Price" class="input me-3 ms-3">
+              <input type="number" name="" id="txtcurrentMileage" placeholder="Current Mileage" class="input me-3 ms-3">
+            </div>
+
+            <p class="text-muted mt-4 ms-4 container">Daily Rates</p>
+            <div class="d-flex container mt-3">
+              <input type="number" name="" id="txtDailyRate" placeholder="Free Mileage" class="input me-3 ms-3">
+              <input type="number" name="" id="txtCarDayPrice" placeholder="Price" class="input me-3 ms-3">
+            </div>
+
+            <p class="text-muted mt-4 ms-4 container">Monthly Rates</p>
+            <div class="d-flex container mt-3">
+              <input type="number" name="" id="txtFreeMileage" placeholder="Free Mileage" class="input me-3 ms-3">
+              <input type="number" name="" id="txtCarMonthlyPrice" placeholder="Price" class="input me-3 ms-3">
+            </div>
+
+            <p class="text-muted mt-4 ms-4 container mb-0">Insert Four Images Of Car(Front/Rear/Side?Interior)</p><br>
+            <div class="d-flex container mt-0">
+              <input type="file" name="" id="imgFront" class="input form-control me-3 ms-3">
+              <input type="file" name="" id="imgRear" class="input form-control  me-3 ms-3">
+            </div>
+
+            <div class="d-flex container mt-1">
+              <input type="file" name="" id="imgside" class="input form-control me-3 ms-3">
+              <input type="file" name="" id="imgInterior" class="input form-control  me-3 ms-3">
+            </div>
+
+            <div class="d-flex container mt-5">
+              <button type="button" name="" id="btnAddCar" class="me-3 ms-3 btn btn-primary car-btn">Add Car</button>
+              <button type="button" name="" id="btnClrCar"  class="me-3 ms-3 btn btn-secondary car-btn">Clear Fields</button>
+            </div>
+
+
+          </form>
+        </div>
+        <div id="carDetailTableDiv" class="rounded-2 mt-3 container">
+          <table class="table mt-3">
+            <thead class="table-header bg-primary text-white">
+            <td>Car ID</td>
+            <td>Type</td>
+            <td>Brand</td>
+            <td>Daily Rate</td>
+            <!--                        <td>Email</td>-->
+            </thead>
+          </table>
+        </div>
+      </section>
+      <section id="driversSec" class="container-fluid contentSections">
+        <div id="driverDataInsertDiv" class="rounded-2 me-3 mt-3">
+          <h5 class="text-primary text-center mt-4">Driver Registration Form</h5>
+          <form>
+            <div class="d-flex container mt-4">
+              <input type="text" name="" id="txtDriverId" placeholder="Driver ID" class="input me-3 ms-3">
+              <input type="text" name="" id="txtDriverLicenceNo" placeholder="Driving License No." class="input me-3 ms-3">
+            </div>
+
+            <div class="d-flex container mt-4">
+              <input type="text" name="" id="txtDriverName" placeholder="Name" class="inputFull input me-3 ms-3">
+            </div>
+
+
+            <div class="d-flex container mt-4">
+              <input type="email" name="" id="txtDriverEmail" placeholder="email" class="input me-3 ms-3">
+              <input type="tel" name="" id="txtDriverContact" placeholder="Contact Number" class="input me-3 ms-3">
+            </div>
+
+            <p class="mt-5 text-primary text-center">Upload photos Of your Driving License (Front and Back)</p>
+            <div class="d-flex container mt-4" id="licenceUploaderDiv">
+              <input type="file" name="" id="fileDrLicenceF" placeholder="Front Image DL" class="input ms-3 mb-3 fileInput form-control">
+              <input type="file" name="" id="fileDrLicenceB" placeholder="Back Image DL" class="input ms-3 fileInput form-control">
+
+            </div>
+
+            <div class="d-flex container mt-3">
+              <img src="" alt="" class="licenceImg me-3 ms-5" >
+              <img src="" alt="" class="licenceImg me-5">
+            </div>
+
+            <div class="d-flex container mt-5">
+              <input type="text" name="" id="txtDriverUserName" placeholder="User Name" class="input me-3 ms-3">
+              <input type="password" name="" id="txtDriverPassword" placeholder="Password" class="input me-3 ms-3">
+            </div>
+
+            <div class="d-flex container mt-5">
+              <button type="button" name="" id="btnSaveDriver" class="me-3 ms-3 btn btn-primary car-btn">Add Car</button>
+              <button type="button" name="" id="btnClrDriver"  class="me-3 ms-3 btn btn-secondary car-btn">Clear Fields</button>
+            </div>
+
+
+          </form>
+        </div>
+        <div id="driverDetailTableDiv" class="rounded-2 mt-3 container">
+          <table class="table mt-3">
+            <thead class="table-header bg-primary text-white">
+            <td>Driver ID</td>
+            <td>Name</td>
+            <td>Licence No.</td>
+            <td>Contact No.</td>
+            <!--                        <td>Email</td>-->
+            </thead>
+          </table>
+        </div>
+      </section>
+      <section id="rentalsSec" class="container-fluid contentSections">
+        <table class="table mt-3">
+          <thead class="table-header bg-primary text-white">
+          <td>Rental ID</td>
+          <td>Rent Detail ID</td>
+          <td>Customer ID</td>
+          <td>Car ID</td>
+          <td>Pickup Date</td>
+          </thead>
+        </table>
+      </section>
+      <section id="paymentsSec" class="container-fluid contentSections">
+        <table class="table mt-3">
+          <thead class="table-header bg-primary text-white">
+          <td>Payment ID</td>
+          <td>Waver Amount</td>
+          <td>Waver Deductions</td>
+          <td>Extra Mileage Payment</td>
+          <td>Total Payment</td>
+          </thead>
+        </table>
+      </section>
+      <section id="reportsSec" class="container-fluid contentSections"></section>
+      <!--            <section id="dashboardSec"></section>-->
+    </section>
+  </section>
+</main>
+
+<script src="../assests/js/jquery-3.7.0.min.js"></script>
+<!--<script src="../assets/bootstrap/js/bootstrap.min.js"></script>-->
+<link rel="stylesheet" href="../assests/fontsAwasome/css/all.min.css">
+
+<script src="../assests/js/bootstrap.bundle.js"></script>
+<script src="../assests/js/bootstrap.js"></script>
+<script src="../assests/js/customerDashboad.js"></script>
+</body>
+</html>
