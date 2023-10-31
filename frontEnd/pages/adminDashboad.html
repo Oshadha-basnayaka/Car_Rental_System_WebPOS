@@ -6,9 +6,8 @@
     <meta content="width=device-width initial-scale=1" name="viewport">
     <link rel="stylesheet" href="../assests/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assests/css/adminDashboad.css">
-<!--    <link rel="stylesheet" href="assests/css/styleshees.css">-->
+    <link rel="stylesheet" href="../assests/fontsAwasome/css/all.min.css">
 
-<!--    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">-->
 
 
 </head>
@@ -183,26 +182,28 @@
             <section id="driversSec" class="container-fluid contentSections">
                 <div id="driverDataInsertDiv" class="rounded-2 me-3 mt-3">
                     <h5 class="text-primary text-center mt-4">Driver Registration Form</h5>
-                    <form>
-                        <div class="d-flex container mt-4">
-                            <input type="text" name="" id="txtDriverId" placeholder="Driver ID" class="input me-3 ms-3">
-                            <input type="text" name="" id="txtDriverLicenceNo" placeholder="Driving License No." class="input me-3 ms-3">
+
+
+                    <form id="driverform"  role="form" action="/driver" enctype="multipart/form-data">
+                    <div class="d-flex container mt-4">
+                            <input type="text" name="driverID" id="txtDriverId" placeholder="Driver ID" class="input me-3 ms-3">
+                            <input type="text" name="drivingLicenceNo" id="txtDriverLicenceNo" placeholder="Driving License No." class="input me-3 ms-3">
                         </div>
 
                         <div class="d-flex container mt-4">
-                            <input type="text" name="" id="txtDriverName" placeholder="Name" class="inputFull input me-3 ms-3">
+                            <input type="text" name="driverName" id="txtDriverName" placeholder="Name" class="inputFull input me-3 ms-3">
                         </div>
 
 
                         <div class="d-flex container mt-4">
-                            <input type="email" name="" id="txtDriverEmail" placeholder="email" class="input me-3 ms-3">
-                            <input type="tel" name="" id="txtDriverContact" placeholder="Contact Number" class="input me-3 ms-3">
+                            <input type="email" name="email" id="txtDriverEmail" placeholder="email" class="input me-3 ms-3">
+                            <input type="tel" name="contactNo" id="txtDriverContact" placeholder="Contact Number" class="input me-3 ms-3">
                         </div>
 
                         <p class="mt-5 text-primary text-center">Upload photos Of your Driving License (Front and Back)</p>
                         <div class="d-flex container mt-4" id="licenceUploaderDiv">
-                            <input type="file" name="" id="fileDrLicenceF" placeholder="Front Image DL" class="input ms-3 mb-3 fileInput form-control">
-                            <input type="file" name="" id="fileDrLicenceB" placeholder="Back Image DL" class="input ms-3 fileInput form-control">
+                            <input type="file" name="frontImage" id="imgFronte" placeholder="Front Image DL" class="input ms-3 mb-3 fileInput form-control">
+                            <input type="file" name="backImage" id="imgBack" placeholder="Back Image DL" class="input ms-3 fileInput form-control">
 
                         </div>
 
@@ -212,13 +213,13 @@
                         </div>
 
                         <div class="d-flex container mt-5">
-                            <input type="text" name="" id="txtDriverUserName" placeholder="User Name" class="input me-3 ms-3">
-                            <input type="password" name="" id="txtDriverPassword" placeholder="Password" class="input me-3 ms-3">
+                            <input type="text" name="userName" id="txtDriverUserName" placeholder="User Name" class="input me-3 ms-3">
+                            <input type="password" name="password" id="txtDriverPassword" placeholder="Password" class="input me-3 ms-3">
                         </div>
 
                         <div class="d-flex container mt-5">
-                            <button type="button" name="" id="btnSaveDriver" class="me-3 ms-3 btn btn-primary car-btn">Add Car</button>
-                            <button type="button" name="" id="btnClrDriver"  class="me-3 ms-3 btn btn-secondary car-btn">Clear Fields</button>
+                            <button type="button"  id="btnSaveDriver" class="me-3 ms-3 btn btn-primary car-btn">Add Driver</button>
+                            <button type="button"  id="btnClrDriver"  class="me-3 ms-3 btn btn-secondary car-btn">Clear Fields</button>
                         </div>
 
 
@@ -265,11 +266,9 @@
 </main>
 
 <script src="../assests/js/jquery-3.7.0.min.js"></script>
-<!--<script src="../assets/bootstrap/js/bootstrap.min.js"></script>-->
-<link rel="stylesheet" href="../assests/fontsAwasome/css/all.min.css">
-
 <script src="../assests/js/bootstrap.bundle.js"></script>
 <script src="../assests/js/bootstrap.js"></script>
 <script src="../assests/js/admindashboad.js"></script>
+<script src="../assests/js/DriverRegistrationController.js"></script>
 </body>
 </html>
