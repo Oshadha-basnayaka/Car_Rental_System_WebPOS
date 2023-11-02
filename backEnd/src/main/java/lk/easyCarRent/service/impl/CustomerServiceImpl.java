@@ -1,11 +1,14 @@
 package lk.easyCarRent.service.impl;
 
 import lk.easyCarRent.dto.CustomerDTO;
+import lk.easyCarRent.dto.DriverDTO;
 import lk.easyCarRent.entity.Customer;
+import lk.easyCarRent.entity.Driver;
 import lk.easyCarRent.entity.User;
 import lk.easyCarRent.repo.CustomerRepo;
 import lk.easyCarRent.service.CustomerService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Service
@@ -28,7 +32,9 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public ArrayList<CustomerDTO> getAllCustomer() {
-        return null;
+        List<Customer> all = customerRepo.findAll();
+        return modelMapper.map(all, new TypeToken<List<CustomerDTO>>() {
+        }.getType());
     }
 
 

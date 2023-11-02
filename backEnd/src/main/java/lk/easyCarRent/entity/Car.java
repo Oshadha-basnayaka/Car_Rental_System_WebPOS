@@ -28,15 +28,19 @@ public class Car {
     private String fuelType;
     private String extraMileagePrice;
     private String currentMileage;
-    private String  wavierPayment;
-    private String  availability;
-    private String  freeMileageDaily;
-    private String  freeMileageDailyPrice;
-    private String  freeMileageMonthly;
-    private String  freeMileageMonthlyPrice;
-    private String  frontImage;
-    private String  rearImage;
-    private String  sideImage;
-    private String  interiorImage;
 
+    private String wavierPayment;
+    private String availability;
+
+    private String freeMileageDaily;
+    private String freeMileageDailyPrice;
+
+    private String freeMileageMonthly;
+    private String freeMileageMonthlyPrice;
+
+
+    private String frontImage;
+    private String rearImage;
+    private String sideImage;
+    private String interiorImage;
 }

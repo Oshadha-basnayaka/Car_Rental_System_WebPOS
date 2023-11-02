@@ -19,9 +19,8 @@ public class CustomerController {
 
     @GetMapping
     public ResponseUtil getAllCustomer(){
-        return new ResponseUtil("OK","Account Create Successfully",null);
+        return new ResponseUtil("OK"," Successfully load",customerService.getAllCustomer());
     }
-
 
 
 

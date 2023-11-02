@@ -18,8 +18,8 @@ public class DriverController {
 
 
     @GetMapping
-    public ResponseUtil getAllCustomer(){
-        return new ResponseUtil("OK","Account Create Successfully",null);
+    public ResponseUtil getAllDrivers(){
+        return new ResponseUtil("OK"," Successfully load",driverservice.getAllDriver());
     }
 
     @PostMapping
@@ -29,7 +29,7 @@ public class DriverController {
         System.out.println(userDTO.toString());
 
         driverDTO.setUser(userDTO);
-        driverservice.saveCustomer(driverDTO);
+        driverservice.saveDriver(driverDTO);
         return new ResponseUtil("OK","Account Create Successfully",null);
     }
 }

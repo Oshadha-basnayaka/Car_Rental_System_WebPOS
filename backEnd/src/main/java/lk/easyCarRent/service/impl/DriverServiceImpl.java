@@ -6,6 +6,7 @@ import lk.easyCarRent.entity.User;
 import lk.easyCarRent.repo.DriverRepo;
 import lk.easyCarRent.service.DriverService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
@@ -24,13 +26,25 @@ public class DriverServiceImpl implements DriverService {
 
     @Autowired
     ModelMapper modelMapper;
-    @Override
-    public ArrayList<DriverDTO> getAllCustomer() {
-        return null;
-    }
+
+
+
 
     @Override
-    public void saveCustomer(DriverDTO driverDTO) {
+    public ArrayList<DriverDTO> getAllDriver() {
+        List<Driver> all = driverRepo.findAll();
+        return modelMapper.map(all, new TypeToken<List<DriverDTO>>() {
+        }.getType());
+
+    }
+
+
+
+
+
+
+    @Override
+    public void saveDriver(DriverDTO driverDTO) {
 
 
         Driver driver = modelMapper.map(driverDTO,Driver.class);
@@ -99,12 +113,12 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public void updateCustomer(DriverDTO driverDTO) {
+    public void updateDriver(DriverDTO driverDTO) {
 
     }
 
     @Override
-    public void deleteCustomer(DriverDTO driverDTO) {
+    public void deleteDriver(DriverDTO driverDTO) {
 
     }
 }
