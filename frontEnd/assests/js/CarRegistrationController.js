@@ -99,26 +99,23 @@ $("#btnsaveCar").click(function () {
 
 
 
-function deleteCar(id) {
-    $.ajax({
-        url:'http://localhost:8080/carRental/car?carID=' + id,
+$("#btnDeleteCar").click(function () {
+    let carID = $("#txtCarId").val();
 
-        method: 'delete',
-        headers:{
-            Auth:"user=admin,pass=admin"
-        },
-        success: function (resp) {
+    $.ajax({
+        url :'http://localhost:8080/carRental/car?carID'+ carID +'',
+        method: "delete",
+        dataType: "json",
+        success:function (resp) {
             alert(resp.message);
-            getAllDrivers();
-            clearCustomerInputFields()
-            return true;
+            getAllCars();
         },
-        error: function (error) {
-            alert(error.responseJSON.message);
-            return false;
+        error:function (error){
+            alert(JSON.parse(error.responseText).message);
         }
     });
-}
+
+});
 
 
 

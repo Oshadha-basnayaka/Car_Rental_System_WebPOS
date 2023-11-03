@@ -19,24 +19,8 @@ $("#btnGetAllDriver").click(function () {
     getAllDrivers();
 });
 
-//delete btn event
-$("#btnDeleteDriver").click(function () {
-    let id = $("#txtDriverId").val();
-
-    let consent = confirm("Do you want to delete.?");
-    if (consent) {
-        let response = deleteDriver(id);
-        if (response) {
-            alert("Driver Deleted");
-            clearCustomerInputFields();
-            getAllDrivers();
-        } else {
-            alert("Driver Not Removed..!");
-        }
-    }
 
 
-});
 
 
 
@@ -66,6 +50,32 @@ $("#btnSaveDriver").click(function () {
 
     });
 });
+
+$("#btnDeleteDriver").click(function () {
+    let driverID = $("#txtDriverId").val();
+
+    $.ajax({
+        url :'http://localhost:8080/carRental/driver?driverID'+ driverID +'',
+        method: "delete",
+        dataType: "json",
+        success:function (resp) {
+            alert(resp.message);
+            getAllDrivers();
+        },
+        error:function (error){
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+
+});
+
+
+
+
+
+
+
+
 
 
 
@@ -105,32 +115,6 @@ function getAllDrivers() {
         }
     });
 }
-
-
-
-function deleteDriver(id) {
-    $.ajax({
-        url:'http://localhost:8080/carRental/driver?driverID=' + id,
-
-        method: 'delete',
-        headers:{
-            Auth:"user=admin,pass=admin"
-        },
-        success: function (resp) {
-            alert(resp.message);
-            getAllDrivers();
-            clearCustomerInputFields()
-            return true;
-        },
-        error: function (error) {
-            alert(error.responseJSON.message);
-            return false;
-        }
-    });
-}
-
-
-
 
 
 

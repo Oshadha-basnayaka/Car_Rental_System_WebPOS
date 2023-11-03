@@ -2,6 +2,7 @@ package lk.easyCarRent.controller;
 
 import lk.easyCarRent.dto.CarDTO;
 import lk.easyCarRent.dto.CustomerDTO;
+import lk.easyCarRent.dto.DriverDTO;
 import lk.easyCarRent.dto.UserDTO;
 import lk.easyCarRent.service.CarService;
 import lk.easyCarRent.service.CustomerService;
@@ -35,6 +36,15 @@ public class CarController {
 
         carService.saveCar(carDTO);
         return new ResponseUtil("OK","Account Create Successfully",null);
+    }
+
+
+
+    @DeleteMapping(params = {"carID"})
+    public ResponseUtil deleteCar(@RequestParam String carID,@ModelAttribute CarDTO carDTO){
+        //System.out.println(driverID);
+        carService.deleteCar(carID,carDTO);
+        return new ResponseUtil("Ok","Successfully Deleted",carID);
     }
 
 

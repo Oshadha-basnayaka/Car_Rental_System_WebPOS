@@ -2,6 +2,7 @@ package lk.easyCarRent.service.impl;
 
 import lk.easyCarRent.dto.CarDTO;
 import lk.easyCarRent.dto.CustomerDTO;
+import lk.easyCarRent.dto.DriverDTO;
 import lk.easyCarRent.entity.Car;
 
 import lk.easyCarRent.entity.Customer;
@@ -151,7 +152,12 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public void deleteCar(CarDTO carDTO) {
+    public void deleteCar(String carID, CarDTO carDTO) {
+
+        if (!carRepo.existsById(carDTO.getCarID())) {
+            throw new RuntimeException(" car is not available, please check the ID before delete.!");
+        }
+        carRepo.deleteById(carID);
 
     }
 }
