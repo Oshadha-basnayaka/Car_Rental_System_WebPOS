@@ -1,65 +1,32 @@
 getAllCars();
 
+// event
 
 $("#btnGetAllCar").click(function () {
     getAllCars();
 });
 
+//delete btn event
+$("#btnDeleteCar").click(function () {
+    let id = $("#txtCarId").val();
+
+    let consent = confirm("Do you want to delete.?");
+    if (consent) {
+        let response = deleteCar(id);
+        if (response) {
+            alert("car Deleted");
+            clearCustomerInputFields();
+            getAllCars();
+        } else {
+            alert("Car Not Removed..!");
+        }
+    }
 
 
-
-//bind tr events for getting back data of the rows to text fields
-function bindTrEvents() {
-    $('#tblCar>tr').click(function () {
-        //get the selected rows data
-        let id = $(this).children().eq(0).text();
-        let regNO = $(this).children().eq(1).text();
-        let brand = $(this).children().eq(2).text();
-        let type = $(this).children().eq(3).text();
-        let passenger = $(this).children().eq(4).text();
-        let color = $(this).children().eq(5).text();
-        let Transmission = $(this).children().eq(6).text();
-        let fuel = $(this).children().eq(7).text();
-        let extraMilagePrice = $(this).children().eq(8).text();
-        let curentMilage = $(this).children().eq(9).text();
-
-        let wavierPayment = $(this).children().eq(10).text();
-        let availability = $(this).children().eq(11).text();
-
-        let freeMileageDaily = $(this).children().eq(12).text();
-        let freeMileageDailyPrice = $(this).children().eq(13).text();
-
-        let freeMileageMonthly = $(this).children().eq(14).text();
-        let freeMileageMonthlyPrice = $(this).children().eq(15).text();
+});
 
 
-        //set the selected rows data to the input fields
-        $("#txtCarId").val(id);
-        $("#txtCarRegNum").val(regNO);
-        $("#txtDriverName").val(brand);
-        $("#txtDriverEmail").val(type);
-        $("#txtCarNumPassengers").val(passenger);
-        $("#txtCarColour").val(color);
-        $("#txtCarTransmission").val(Transmission);
-        $("#txtCarFuel").val(fuel);
-        $("#txtExtraKMPrice").val(extraMilagePrice);
-        $("#txtcurrentMileage").val(curentMilage);
-
-        $("#txtWavierPayment").val(wavierPayment);
-        $("#txtAvailability").val(availability);
-
-        $("#txtDailyRate").val(freeMileageDaily);
-        $("#txtCarDayPrice").val(freeMileageDailyPrice);
-
-        $("#txtFreeMileage").val(freeMileageMonthly);
-        $("#txtCarMonthlyPrice").val(freeMileageMonthlyPrice);
-    })
-}
-
-
-
-
-
+// funtions
 
 function getAllCars() {
     //clear all tbody data before add
@@ -99,15 +66,13 @@ function getAllCars() {
             }
 
 
-           bindTrEvents();
+            bindTrEventsCar();
         },
         error: function (error) {
             alert(error.responseJSON.message);
         }
     });
 }
-
-
 
 
 
@@ -131,3 +96,82 @@ $("#btnsaveCar").click(function () {
 
     });
 });
+
+
+
+function deleteCar(id) {
+    $.ajax({
+        url:'http://localhost:8080/carRental/car?carID=' + id,
+
+        method: 'delete',
+        headers:{
+            Auth:"user=admin,pass=admin"
+        },
+        success: function (resp) {
+            alert(resp.message);
+            getAllDrivers();
+            clearCustomerInputFields()
+            return true;
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+            return false;
+        }
+    });
+}
+
+
+
+
+
+
+
+
+// bind tr events for getting back data of the rows to text fields
+function bindTrEventsCar() {
+    $('#tblCar>tr').click(function () {
+        //get the selected rows data
+        let id = $(this).children().eq(0).text();
+        let regNO = $(this).children().eq(1).text();
+        let brand = $(this).children().eq(2).text();
+        let type = $(this).children().eq(3).text();
+        let passenger = $(this).children().eq(4).text();
+        let color = $(this).children().eq(5).text();
+        let Transmission = $(this).children().eq(6).text();
+        let fuel = $(this).children().eq(7).text();
+        let extraMilagePrice = $(this).children().eq(8).text();
+        let curentMilage = $(this).children().eq(9).text();
+
+        let wavierPayment = $(this).children().eq(10).text();
+        let availability = $(this).children().eq(11).text();
+
+        let freeMileageDaily = $(this).children().eq(12).text();
+        let freeMileageDailyPrice = $(this).children().eq(13).text();
+
+        let freeMileageMonthly = $(this).children().eq(14).text();
+        let freeMileageMonthlyPrice = $(this).children().eq(15).text();
+
+
+        //set the selected rows data to the input fields
+        $("#txtCarId").val(id);
+        $("#txtCarRegNum").val(regNO);
+        $("#txtCarBrand").val(brand);
+        $("#txtCarType").val(type);
+        $("#txtCarNumPassengers").val(passenger);
+        $("#txtCarColour").val(color);
+        $("#txtCarTransmission").val(Transmission);
+        $("#txtCarFuel").val(fuel);
+        $("#txtExtraKMPrice").val(extraMilagePrice);
+        $("#txtcurrentMileage").val(curentMilage);
+
+        $("#txtWavierPayment").val(wavierPayment);
+        $("#txtAvailability").val(availability);
+
+        $("#txtDailyRate").val(freeMileageDaily);
+        $("#txtCarDayPrice").val(freeMileageDailyPrice);
+
+        $("#txtFreeMileage").val(freeMileageMonthly);
+        $("#txtCarMonthlyPrice").val(freeMileageMonthlyPrice);
+    })
+}
+

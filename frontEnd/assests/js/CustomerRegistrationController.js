@@ -8,26 +8,7 @@ $("#btnGetAllCustomer").click(function () {
 
 
 
-//bind tr events for getting back data of the rows to text fields
-function bindTrEvents() {
-    $('#tblDriver>tr').click(function () {
-        //get the selected rows data
-        let id = $(this).children().eq(0).text();
-        let name = $(this).children().eq(1).text();
-        let address = $(this).children().eq(2).text();
-        let email = $(this).children().eq(3).text();
-        let contactNo = $(this).children().eq(4).text();
-        let licenseNo = $(this).children().eq(5).text();
 
-        //set the selected rows data to the input fields
-        $("#txtDriverId").val(id);
-        $("#txtDriverLicenceNo").val(name);
-        $("#txtDriverName").val(address);
-        $("#txtDriverEmail").val(email);
-        $("#txtDriverContact").val(contactNo);
-        $("#txtDriverContact").val(licenseNo);
-    })
-}
 
 
 
@@ -87,7 +68,7 @@ function getAllCustomer() {
             }
 
 
-            bindTrEvents();
+            //bindTrEventsCustomer();
         },
         error: function (error) {
             alert(error.responseJSON.message);

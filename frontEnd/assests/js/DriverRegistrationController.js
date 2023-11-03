@@ -19,6 +19,26 @@ $("#btnGetAllDriver").click(function () {
     getAllDrivers();
 });
 
+//delete btn event
+$("#btnDeleteDriver").click(function () {
+    let id = $("#txtDriverId").val();
+
+    let consent = confirm("Do you want to delete.?");
+    if (consent) {
+        let response = deleteDriver(id);
+        if (response) {
+            alert("Driver Deleted");
+            clearCustomerInputFields();
+            getAllDrivers();
+        } else {
+            alert("Driver Not Removed..!");
+        }
+    }
+
+
+});
+
+
 
 
 
@@ -72,10 +92,13 @@ function getAllDrivers() {
                 let backImage = dri.backImage;
                 let row = `<tr><td>${driverID}</td><td>${drivingLicenceNo}</td><td>${driverName}</td><td>${email}</td><td>${contactNo}</td><td>${frontImage}<td>${backImage}</td></td></tr>`;
                 $("#tblDriver").append(row);
+
+
+                 bindTrEventsDriver();
             }
 
 
-             bindTrEvents();
+
         },
         error: function (error) {
             alert(error.responseJSON.message);
@@ -83,44 +106,30 @@ function getAllDrivers() {
     });
 }
 
-function updateDriver(id) {
-    if (searchCustomer(id) == undefined) {
-        alert("No such Customer..please check the ID");
-    } else {
-        let consent = confirm("Do you really want to update this customer.?");
-        if (consent) {
-            let customer = searchCustomer(id)[0];
-            //if the customer available can we update.?
-            console.log(customer);
-            let customerName = $("#txtCustomerName").val();
-            let customerAddress = $("#txtCustomerAddress").val();
-            let customerSalary = $("#txtCustomerSalary").val();
-            customer.id = id;
-            customer.name = customerName;
-            customer.address = customerAddress;
-            customer.salary = customerSalary;
 
-            $.ajax({
-                url: BASE_URL + 'customer',
-                method: 'put',
-                headers:{
-                    Auth:"user=admin,pass=admin"
-                },
-                contentType: "application/json",
-                data: JSON.stringify(customer),
-                success: function (resp) {
-                    alert(resp.message);
-                    getAllCustomers();
-                    clearCustomerInputFields();
-                },
-                error: function (error) {
-                    alert(error.responseJSON.message);
-                }
-            });
+
+function deleteDriver(id) {
+    $.ajax({
+        url:'http://localhost:8080/carRental/driver?driverID=' + id,
+
+        method: 'delete',
+        headers:{
+            Auth:"user=admin,pass=admin"
+        },
+        success: function (resp) {
+            alert(resp.message);
+            getAllDrivers();
+            clearCustomerInputFields()
+            return true;
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+            return false;
         }
-    }
-
+    });
 }
+
+
 
 
 
@@ -128,20 +137,26 @@ function updateDriver(id) {
 
 
 //bind tr events for getting back data of the rows to text fields
-function bindTrEvents() {
+
+function bindTrEventsDriver() {
+
     $('#tblDriver>tr').click(function () {
+
+
         //get the selected rows data
         let id = $(this).children().eq(0).text();
-        let licenceNO = $(this).children().eq(1).text();
-        let name = $(this).children().eq(2).text();
-        let email = $(this).children().eq(3).text();
-        let contactNo = $(this).children().eq(4).text();
+        let name = $(this).children().eq(1).text();
+        let email = $(this).children().eq(2).text();
+        let contactNo = $(this).children().eq(3).text();
+        let licenseNo = $(this).children().eq(4).text();
 
         //set the selected rows data to the input fields
         $("#txtDriverId").val(id);
-        $("#txtDriverLicenceNo").val(licenceNO);
         $("#txtDriverName").val(name);
         $("#txtDriverEmail").val(email);
         $("#txtDriverContact").val(contactNo);
+        $("#txtDriverLicenceNo").val(licenseNo);
     })
 }
+
+

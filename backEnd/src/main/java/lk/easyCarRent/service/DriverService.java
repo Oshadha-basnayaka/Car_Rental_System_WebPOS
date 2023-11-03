@@ -10,5 +10,5 @@ public interface DriverService {
     ArrayList<DriverDTO> getAllDriver();
     void saveDriver(DriverDTO driverDTO);
     void updateDriver(DriverDTO driverDTO);
-    void deleteDriver(DriverDTO driverDTO);
+    void deleteDriver(String id);
 }

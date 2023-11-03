@@ -32,4 +32,25 @@ public class DriverController {
         driverservice.saveDriver(driverDTO);
         return new ResponseUtil("OK","Account Create Successfully",null);
     }
+
+    @PutMapping
+    public ResponseUtil updateDriver(@ModelAttribute DriverDTO driverDTO , @ModelAttribute UserDTO userDTO) {
+
+        System.out.println(driverDTO.toString());
+        System.out.println(userDTO.toString());
+
+        driverDTO.setUser(userDTO);
+        driverservice.saveDriver(driverDTO);
+        return new ResponseUtil("OK","Account Create Successfully",null);
+    }
+
+
+
+    @DeleteMapping(params = {"driverID"})
+    public ResponseUtil deleteDriver(String driverID){
+        System.out.println(driverID);
+        driverservice.deleteDriver(driverID);
+        return new ResponseUtil("Ok","Successfully Deleted",driverID);
+    }
+
 }
